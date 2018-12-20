@@ -3,7 +3,7 @@
 from setuptools import find_packages, setup
 
 setup(name='ibm_neunets_processor',
-      version='0.5',
+      version='0.6',
       description='Python library to inference on trained neunets models',
       author='IBM',
       author_email='',

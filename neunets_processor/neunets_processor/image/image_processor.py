@@ -54,10 +54,11 @@ class ImageProcessor:
         '''
         image = image[0]
         image_height, image_width, num_channels = self.image_shape
-        image = np.asarray(image, dtype=np.float64)
-        image = convert_channels(image, num_channels)
+
         image = Image.fromarray(image.astype('uint8'))
         image = image.resize((image_height, image_width), Image.ANTIALIAS)
+        image = np.asarray(image, dtype=np.uint8)
+        image = convert_channels(image, num_channels)
         image = np.resize(image, (1,image_height, image_width, num_channels))
         image = self._normalize_image(image)
         return image
