@@ -54,7 +54,7 @@ class ImageProcessor:
         '''
         image = image[0]
         image_height, image_width, num_channels = self.image_shape
-
+        image = np.array(image)
         image = Image.fromarray(image.astype('uint8'))
         image = image.resize((image_height, image_width), Image.ANTIALIAS)
         image = np.asarray(image, dtype=np.uint8)
